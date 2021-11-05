@@ -1,22 +1,27 @@
 package com.demo.jackson.json;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student {
 
 	private int id;
 	private String firstName;
 	private String lastName;
 	private boolean active;
+	private Address address;
 
 	public Student() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(int id, String firstName, String lastName, boolean active) {
+	public Student(int id, String firstName, String lastName, boolean active, Address address) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.active = active;
+		this.address = address;
 	}
 
 	public int getId() {
@@ -49,6 +54,14 @@ public class Student {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }
